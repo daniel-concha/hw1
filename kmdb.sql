@@ -105,6 +105,7 @@ DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS actors;
 DROP TABLE IF EXISTS studios;
 DROP TABLE IF EXISTS top_cast;
+DROP TABLE IF EXISTS roles;
 
 -- Create new tables, according to your domain model
 -- TODO!
@@ -112,8 +113,7 @@ CREATE TABLE movies(
     title TEXT,
     year_released INTEGER,
     mpaa_rating TEXT,
-    studio_id TEXT,
-    role_id TEXT
+    studio_id TEXT
 );
 
 CREATE TABLE actors(
@@ -146,6 +146,7 @@ INSERT INTO studios(
 )
 VALUES (
     "Warner Bros."
+    
 );
 
 INSERT INTO actors(
@@ -295,13 +296,38 @@ VALUES(
     "Selina Kyle"
 );
 
+INSERT INTO movies(
+    title, year_released, mpaa_rating, studio_id
+)
+VALUES(
+    "Batman Begins", 2005, "PG-13", 1
+);
+
+INSERT INTO movies(
+    title, year_released, mpaa_rating, studio_id
+)
+VALUES(
+    "The Dark Knight", 2008, "PG-13", 1
+);
+
+INSERT INTO movies(
+    title, year_released, mpaa_rating, studio_id
+)
+VALUES(
+    "The Dark Knight Rises", 2012, "PG-13", 1
+);
+
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
 .print ""
 
 -- The SQL statement for the movies output
-SELECT * FROM movies;
+SELECT title, year_released, mpaa_rating, studios.studio_name 
+FROM movies 
+INNER JOIN studios
+ON studio_id = studios.id;
 
 -- Prints a header for the cast output
 .print ""
