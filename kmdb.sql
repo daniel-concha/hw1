@@ -110,16 +110,16 @@ DROP TABLE IF EXISTS roles;
 -- Create new tables, according to your domain model
 -- TODO!
 CREATE TABLE movies(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT,
     year_released INTEGER,
     mpaa_rating TEXT,
-    studio_id TEXT
+    studio_id INTEGER
 );
 
 CREATE TABLE actors(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    actor_name TEXT,
-    role_id TEXT
+    actor_name TEXT
 );
 
 CREATE TABLE studios(
@@ -134,8 +134,10 @@ CREATE TABLE roles(
 
 CREATE TABLE top_cast(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
     actor_id TEXT,
-    role_id TEXT
+    role_id TEXT,
+    movie_id TEXT
 );
 
 
@@ -320,8 +322,110 @@ VALUES(
     "The Dark Knight Rises", 2012, "PG-13", 1
 );
 
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    1 , 1,1
+);
 
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    1, 2,2
+); 
 
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    1, 3,3
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    1, 4,4
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    1, 5, 5
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    2, 1, 1
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    2, 6, 6
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    2, 7, 7
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    2, 2, 2
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    2, 8, 4
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    3, 1, 1
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    3, 5, 5
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    3, 9, 8
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    3, 10, 9
+); 
+
+INSERT INTO top_cast(
+    movie_id, actor_id, role_id
+    )
+VALUES(
+    3, 11, 10
+); 
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -342,11 +446,11 @@ ON studio_id = studios.id;
 
 
 -- The SQL statement for the cast output
--- SELECT title, actors.actor_name, roles.role_name
--- FROM top_cast 
--- INNER JOIN actors
--- ON actor_id = actors.id
--- INNER JOIN roles
--- ON role_id = roles.id
--- INNER JOIN movies
--- ON ;
+SELECT movies.title, actors.actor_name, roles.role_name
+FROM top_cast 
+INNER JOIN actors
+ON actor_id = actors.id
+INNER JOIN roles
+ON role_id = roles.id
+INNER JOIN movies
+ON movie_id = movies.id;
