@@ -102,7 +102,7 @@
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
 DROP TABLE IF EXISTS movies;
-DROP TABLE IF EXISTS actor;
+DROP TABLE IF EXISTS actors;
 DROP TABLE IF EXISTS studios;
 DROP TABLE IF EXISTS top_cast;
 
@@ -111,16 +111,18 @@ DROP TABLE IF EXISTS top_cast;
 CREATE TABLE movies(
     title TEXT,
     year_released INTEGER,
-    mpaa_rating INTEGER,
-    studio_id INTEGER
+    mpaa_rating TEXT,
+    studio_id TEXT
 );
 
-CREATE TABLE actor(
-    id INTEGER PRIMARY KEY AUTOINCREMENT
+CREATE TABLE actors(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor_name TEXT
 );
 
 CREATE TABLE studios(
-    id INTEGER PRIMARY KEY AUTOINCREMENT
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    studio_name TEXT
 );
 
 CREATE TABLE top_cast(
@@ -133,13 +135,97 @@ CREATE TABLE top_cast(
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
+INSERT INTO studios(
+    studio_name 
+)
+VALUES (
+    "Warner Bros."
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Christian Bale"
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Michael Caine"
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Liam Neeson"
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Katie Holmes"
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Gary Oldman"
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Heath Ledger"
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Aaron Eckhart"
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Maggie Gyllenhaal"
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Tom Hardy"
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Joseph Gordon-Levitt"
+);
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Anne Hathaway"
+);
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+SELECT * FROM movies;
 
 -- Prints a header for the cast output
 .print ""
