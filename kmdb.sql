@@ -112,7 +112,8 @@ CREATE TABLE movies(
     title TEXT,
     year_released INTEGER,
     mpaa_rating TEXT,
-    studio_id TEXT
+    studio_id TEXT,
+    role_id TEXT
 );
 
 CREATE TABLE actors(
@@ -123,6 +124,11 @@ CREATE TABLE actors(
 CREATE TABLE studios(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     studio_name TEXT
+);
+
+CREATE TABLE roles(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role_name TEXT
 );
 
 CREATE TABLE top_cast(
@@ -217,6 +223,76 @@ INSERT INTO actors(
 )
 VALUES(
     "Anne Hathaway"
+);
+
+INSERT INTO roles(
+    role_name
+)
+VALUES(
+    "Bruce Wayne"
+);
+
+INSERT INTO roles(
+    role_name
+)
+VALUES(
+    "Alfred"
+);
+
+INSERT INTO roles(
+    role_name
+)
+VALUES(
+    "Ra's Al Ghul"
+);
+
+INSERT INTO roles(
+    role_name
+)
+VALUES(
+    "Rachel Dawes"
+);
+
+INSERT INTO roles(
+    role_name
+)
+VALUES(
+    "Commissioner Gordon"
+);
+
+INSERT INTO roles(
+    role_name
+)
+VALUES(
+    "Joker"
+);
+
+INSERT INTO roles(
+    role_name
+)
+VALUES(
+    "Harvey Dent"
+);
+
+INSERT INTO roles(
+    role_name
+)
+VALUES(
+    "Bane"
+);
+
+INSERT INTO roles(
+    role_name
+)
+VALUES(
+    "John Blake"
+);
+
+INSERT INTO roles(
+    role_name
+)
+VALUES(
+    "Selina Kyle"
 );
 
 -- Prints a header for the movies output
