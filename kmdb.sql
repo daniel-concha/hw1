@@ -133,11 +133,9 @@ CREATE TABLE roles(
 );
 
 CREATE TABLE top_cast(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT,
-    actor_id TEXT,
-    role_id TEXT,
-    movie_id TEXT
+    movie_id INTEGER,
+    actor_id INTEGER,
+    role_id INTEGER
 );
 
 
