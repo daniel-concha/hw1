@@ -112,7 +112,7 @@ DROP TABLE IF EXISTS roles;
 CREATE TABLE movies(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT,
-    year_released INTEGER,
+    year_released TEXT,
     mpaa_rating TEXT,
     studio_id INTEGER
 );
